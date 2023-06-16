@@ -1,5 +1,5 @@
 const DashBoard = () => {
-  return;
+  return <section></section>;
 };
 
 export default DashBoard;

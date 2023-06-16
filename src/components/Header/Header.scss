@@ -1,0 +1,24 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.header {
+  width: 100%;
+  background-color: $secondary-background-color;
+  @include flex(row, space-around);
+  align-items: center;
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__searchbar {
+    height: 2rem;
+    border-radius: 1rem;
+  }
+
+  &__login-dropdown {
+    @include flex(row, space-around);
+    font-size: 1.2rem;
+    border: 1px black dashed;
+  }
+}
