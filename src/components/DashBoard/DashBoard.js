@@ -10,7 +10,10 @@ const DashBoard = ({ loggedIn, admin, school, athletes }) => {
 
   let registrationsLeft = maxRegistrations - registeredCount;
   let poundsRaised = registeredCount * poundsPerRegistration;
-  
+
+  if (!athletes) {
+    return <></>;
+  }
   
   return (
     <section className="dashboard">
