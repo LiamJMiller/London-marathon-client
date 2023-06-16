@@ -1,7 +1,8 @@
+import { useState } from "react";
 import usericon from "../../assets/icons/user-placeholder.svg";
 import "./Header.scss";
 
-export default function Header() {
+export default function Header({ setLoggedIn }) {
   return (
     <header className="header">
       <h1 className="header__title">Coopers School</h1>
@@ -12,7 +13,13 @@ export default function Header() {
       />
       <div className="header__login-dropdown">
         <img src={usericon} alt="" />
-        <p>Users name here \/</p>
+        <p
+          onClick={() => {
+            setLoggedIn(false);
+          }}
+        >
+          Users name here \/
+        </p>
       </div>
     </header>
   );

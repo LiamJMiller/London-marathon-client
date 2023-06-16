@@ -2,10 +2,10 @@ import DashBoard from "../../components/DashBoard/DashBoard";
 import Header from "../../components/Header/Header";
 import Table from "../../components/Table/Table";
 
-const MainPage = () => {
+const MainPage = ({ setLoggedIn }) => {
   return (
     <>
-      <Header />
+      <Header setLoggedIn={setLoggedIn} />
       <DashBoard />
       <Table />
     </>
