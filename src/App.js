@@ -67,9 +67,11 @@ function App() {
 
   return (
     <div className="App">
-      <LoginPanel />
-      <header className="App-header">london marathon hackathon</header>
+      <LoginPanel setLoggedIn={setLoggedIn} />
 
+      <header className="App-header" setLoggedIn={setLoggedIn}>
+        london marathon hackathon
+      </header>
       <MainPage />
     </div>
   );
