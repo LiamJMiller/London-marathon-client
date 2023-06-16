@@ -24,7 +24,10 @@
   &__login-dropdown {
     @include flex(row, space-around);
     font-size: 1.2rem;
-    border: 1px black dashed;
     align-items: center;
+  }
+
+  &__user-icon {
+    margin-right: 1rem;
   }
 }

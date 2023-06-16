@@ -11,14 +11,8 @@ export default function Header({ setLoggedIn, loggedIn, admin, school }) {
         placeholder="search by name"
       />
       <div className="header__login-dropdown">
-        <img src={usericon} alt="" />
-        <p
-          onClick={() => {
-            setLoggedIn(false);
-          }}
-        >
-          {admin} \/
-        </p>
+        <img className="header__user-icon" src={usericon} alt="" />
+        <p onClick={() => {setLoggedIn(false)}}>{admin.first_name + " " + admin.last_name} \/</p>
       </div>
     </header>
   );
