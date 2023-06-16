@@ -2,9 +2,9 @@
 @use "../../partials/mixins" as *;
 
 .table {
-  margin-left: 2rem;
   border: solid 1px grey;
-  border-top-left-radius: 2rem;
+  border-radius: 2rem 2rem 0 0;
   overflow-x: scroll;
   background-color: $primary-background-color;
+  margin: 0 2rem 5rem 2rem;
 }

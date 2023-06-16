@@ -1,22 +1,35 @@
 import "./TableHeader.scss";
-const TableHeader = () => {
+import trashIconSource from "../../assets/icons/trash.svg";
+
+const TableHeader = ({ category, athletes }) => {
+  let title = "";
+
+  if (category === "registered") {
+    title = "Registered Athletes";
+  }
+  else {
+    title = "Waitlist Athletes";
+  }
+  const count = athletes.length;
+
   return (
     <div className="table-header">
-      <input
-        type="checkbox"
-        className="table-header__checkbox"
-        id=""
-        name=""
-        value=""
-      />
-      <h4 className="table-header__item">1</h4>
-      <h4 className="table-header__item">2</h4>
-      <h4 className="table-header__item">3</h4>
-      <h4 className="table-header__item">4</h4>
-      <h4 className="table-header__item">5</h4>
-      <h4 className="table-header__item">6</h4>
-      <h4 className="table-header__item">7</h4>
-      <h4 className="table-header__item">8</h4>
+      <div className="table-header__left-container">
+        <h1 className="table-header__title">{title} ({count})</h1>
+        {category === "registered" 
+          ? <button className="table-header__btn table-header__btn--add-registered">Add Athlete</button>
+          : <button className="table-header__btn table-header__btn--add-waitlist">Add Athlete</button>
+        }
+        {category === "registered" 
+          ? <button className="table-header__btn table-header__btn--confirm">Request Confirmation</button>
+          : <button className="table-header__btn table-header__btn--register">Register Athlete</button>}
+      </div>
+      {category === "registered" 
+        &&  <div className="table-header__btn-unregister">
+              <img className="table-header__icon-unregister" src={trashIconSource} alt="unregister" />
+              <p className="table-header__text-unregister">Unregister</p>
+            </div>
+        }
     </div>
   );
 };

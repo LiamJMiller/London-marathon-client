@@ -1,19 +1,66 @@
-@use "../../partials/variables" as *;
-@use "../../partials/mixins" as *;
-
 .table-header {
-  width: 120%;
-  @include flex(row, space-evenly);
-  border-bottom: solid 1px grey;
-  border-top-left-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  height: 8rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem 2rem 0 2rem;
+  margin-top: 5rem;
 
-  &__item {
-    width: 15%;
-    padding: 1rem;
+  &__left-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
-  &__checkbox {
-    width: 2rem;
-    margin-left: 1rem;
+  &__title {
+    font-size: 2.5rem;
+    margin: 1rem 5rem 1rem 0;
   }
+
+  &__btn {
+    border: none;
+    border-radius: 3rem;
+    height: 4.5rem;
+    margin: 1rem;
+
+
+    &--add-registered {
+      background-color: rgba(228, 17, 101, 1);
+      color: white;
+      width: 15rem;
+    }
+
+    &--add-waitlist {
+      background-color: rgba(144, 144, 144, 1);
+      color: white;
+      width: 15rem;
+    }
+
+    &--confirm {
+      border: 1px solid rgba(228, 17, 101, 1);
+      color: rgba(228, 17, 101, 1);
+      width: 22rem;
+    }
+
+    &--register {
+      border: 1px solid rgba(144, 144, 144, 1);
+      color: rgba(144, 144, 144, 1);
+      width: 18rem;
+    }
+
+  }
+
+  &__btn-unregister {
+    height: 3rem;
+  }
+
+  &__icon-unregister {
+    height: 2rem;
+  }
+
+  &__text-unregister {
+    font-size: 1.2rem;
+  }
+
 }
