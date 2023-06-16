@@ -1,6 +1,6 @@
 import "./DashBoard.scss";
 
-const DashBoard = () => {
+const DashBoard = ({ loggedIn, admin, school, athletes }) => {
   return (
     <section className="dashboard">
       <div className="dashboard__card">

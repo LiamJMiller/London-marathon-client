@@ -1,0 +1,10 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.table {
+  border: solid 1px grey;
+  border-radius: 2rem 2rem 0 0;
+  overflow-x: scroll;
+  background-color: $primary-background-color;
+  margin: 0 2rem 5rem 2rem;
+}
