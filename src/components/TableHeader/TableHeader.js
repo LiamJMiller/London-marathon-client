@@ -21,6 +21,12 @@ const TableHeader = ({ category, athletes, selectedAthletes, getAndSetAthletesDa
       }
   }
 
+  const handleMoveUp = () => {
+      for (let i = 0; i < selectedAthletes.length; i++) {
+        athletes.find(athlete => athlete.id === selectedAthletes[i].id).attendance_status = "Not Confirmed";
+      }
+  }
+
   if (category === "registered") {
     title = "Registered Athletes";
     count = athletes.filter(athlete => athlete.attendance_status !== "Waitlist").length;
@@ -40,7 +46,7 @@ const TableHeader = ({ category, athletes, selectedAthletes, getAndSetAthletesDa
         }
         {category === "registered" 
           ? <button className="table-header__btn table-header__btn--confirm">Request Confirmation</button>
-          : <button className="table-header__btn table-header__btn--register">Register Athlete</button>}
+          : <button className="table-header__btn table-header__btn--register" onClick={handleMoveUp}>Register Athlete</button>}
       </div>
       {category === "registered" 
         &&  <div className="table-header__btn-unregister">
