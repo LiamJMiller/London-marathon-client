@@ -1,0 +1,59 @@
+.table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 180%;
+    margin: 0 1rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+
+    &__col {
+        margin: 0 1rem;
+        text-align: left;
+        width: 18%;
+
+        &--first_name {
+            // width: 12rem;
+        }
+    
+        &--last-name {
+            // width: 12rem;
+        }
+    
+        &--contact {
+            // width: 12rem;
+        }
+    
+        &--event {
+            // width: 12rem;
+        }
+    
+        &--attendance-status {
+            // width: 15rem;
+        }
+    
+        &--age {
+            // width: 4rem;
+        }
+    
+        &--wheelchair-ambulant {
+            // width: 12rem;
+        }
+    
+        &--borough {
+            // width: 12rem;
+        }
+    }
+
+    &__checkbox {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    
+}
+
+// &__item {
+//     padding: 1rem;
+//     margin: 0 1rem;

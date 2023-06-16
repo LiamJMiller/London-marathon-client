@@ -2,7 +2,7 @@ import { useState } from "react";
 import usericon from "../../assets/icons/user-placeholder.svg";
 import "./Header.scss";
 
-export default function Header({ setLoggedIn }) {
+export default function Header({ setLoggedIn, loggedIn, admin, school }) {
   return (
     <header className="header">
       <h1 className="header__title">Coopers School</h1>

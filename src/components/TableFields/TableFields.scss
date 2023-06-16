@@ -1,0 +1,60 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.table-fields {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 180%;
+    justify-content: space-between;
+    border-bottom: solid 1px grey;
+    border-top-left-radius: 2rem;
+    font-size: 1.2rem;
+    color: grey;
+  
+    &__item {
+      padding: 1rem;
+      margin: 0 1rem;
+      text-align: left;
+      width: 18%;
+
+      &--first-name {
+        // width: 12rem;        
+      }
+
+      &--last-name {
+        // width: 12rem;
+      }
+
+      &--contact {
+        // width: 12rem;
+      }
+
+      &--event {
+        // width: 12rem;
+      }
+
+      &--attendance-status {
+        // width: 15rem;
+      }
+
+      &--age {
+        // width: 4rem;
+      }
+
+      &--wheelchair-ambulant {
+        // width: 12rem;
+      }
+
+      &--borough {
+        // width: 12rem;
+      }
+
+    }
+  
+    &__checkbox {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-left: 1.5rem;
+    }
+  }
