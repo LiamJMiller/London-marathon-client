@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.scss";
 import LoginPanel from "./components/LoginPanel/LoginPanel";
 import MainPage from "./pages/MainPage/MainPage";

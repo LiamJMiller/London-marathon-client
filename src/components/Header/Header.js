@@ -1,11 +1,10 @@
-import { useState } from "react";
 import usericon from "../../assets/icons/user-placeholder.svg";
 import "./Header.scss";
 
 export default function Header({ setLoggedIn, loggedIn, admin, school }) {
   return (
     <header className="header">
-      <h1 className="header__title">Coopers School</h1>
+      <h1 className="header__title">{school}</h1>
       <input
         type="text"
         className="header__searchbar"
@@ -18,7 +17,7 @@ export default function Header({ setLoggedIn, loggedIn, admin, school }) {
             setLoggedIn(false);
           }}
         >
-          Users name here \/
+          {admin} \/
         </p>
       </div>
     </header>
