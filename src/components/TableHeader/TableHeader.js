@@ -1,9 +1,25 @@
 import "./TableHeader.scss";
 import trashIconSource from "../../assets/icons/trash.svg";
+import axios from "axios";
 
-const TableHeader = ({ category, athletes }) => {
+const TableHeader = ({ category, athletes, selectedAthletes, getAndSetAthletesData }) => {
   let title;
   let count;
+
+  const deleteAthlete = async (athleteID) => {
+    axios
+      .delete(`http://localhost:8080/athletes/${athleteID}`)
+      .then(result => {
+        console.log(result);
+        getAndSetAthletesData();
+      })
+  }
+
+  const handleUnregister = () => {
+      for (let i = 0; i < selectedAthletes.length; i++) {
+        deleteAthlete(selectedAthletes[i]);
+      }
+  }
 
   if (category === "registered") {
     title = "Registered Athletes";
@@ -28,7 +44,7 @@ const TableHeader = ({ category, athletes }) => {
       </div>
       {category === "registered" 
         &&  <div className="table-header__btn-unregister">
-              <img className="table-header__icon-unregister" src={trashIconSource} alt="unregister" />
+              <img className="table-header__icon-unregister" src={trashIconSource} alt="unregister" onClick={handleUnregister}/>
               <p className="table-header__text-unregister">Unregister</p>
             </div>
         }

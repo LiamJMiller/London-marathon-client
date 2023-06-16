@@ -5,10 +5,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [admin, setAdmin] = useState({ school_id: 1}); // object with id, name, ...
-  const [school, setSchool] = useState({ id: 1 }); // object with id, name, ...
+  const [loggedIn, setLoggedIn] = useState(true);
+  const [admin, setAdmin] = useState({
+    first_name: "Evelyn",
+    last_name: "Taylor",
+    school_id: 1,
+  }); // object with id, name, ...
+  const [update, setUpdate] = useState(false);
+  const [school, setSchool] = useState({ id: 1, name: "The Cooper School" }); // object with id, name, ...
   const [athletes, setAthletes] = useState([]);
+  const [selectedAthletes, setSelectedAthletes] = useState([]);
 
   // const getSchoolsData = async () => {
   //   try {
@@ -62,17 +68,29 @@ function App() {
       getAndSetSchoolByID();
     }
     getAndSetAthletesData();
-    console.log(admin);
+    console.log("admin: ", admin);
   }, []);
+
+  if (!loggedIn) {
+    return <LoginPanel setLoggedIn={setLoggedIn} />;
+  }
+
+  if (!athletes) {
+    return <></>;
+  }
 
   return (
     <div className="App">
-      <LoginPanel setLoggedIn={setLoggedIn} />
-
-      <header className="App-header" setLoggedIn={setLoggedIn}>
-        london marathon hackathon
-      </header>
-      <MainPage />
+      <MainPage
+        setLoggedIn={setLoggedIn}
+        loggedIn={loggedIn}
+        admin={admin}
+        school={school}
+        athletes={athletes}
+        selectedAthletes={selectedAthletes}
+        setSelectedAthletes={setSelectedAthletes}
+        getAndSetAthletesData={getAndSetAthletesData}
+      />
     </div>
   );
 }
