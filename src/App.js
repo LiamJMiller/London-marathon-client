@@ -1,4 +1,5 @@
 import "./App.scss";
+import LoginPanel from "./components/LoginPanel/LoginPanel";
 import MainPage from "./pages/MainPage/MainPage";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -65,6 +66,7 @@ function App() {
       <p>TESTING: LOGGED IN: {String(loggedIn)}</p>
       <p>TESTING: ADMINS SCHOOL ID: {String(admin.school_id)}</p>
       <p>TESTING: SCHOOL NAME: {String(school.name)}</p>
+      <LoginPanel />
       <header className="App-header">london marathon hackathon</header>
       <MainPage loggedIn={loggedIn} admin={admin} school={school} athletes={athletes} />
     </div>

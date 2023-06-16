@@ -1,10 +1,10 @@
-@use "./partials/variables";
+@use "./partials/variables" as *;
 @use "./partials/mixins";
 @use "./partials/resets";
 
 .App {
   text-align: center;
-  background-color: aliceblue;
+  background-color: $primary-background-color;
 }
 
 .App-logo {

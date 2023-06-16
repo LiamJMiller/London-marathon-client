@@ -3,7 +3,7 @@
 
 .header {
   width: 100%;
-  background-color: $secondary-background-color;
+  background-color: $secondary-color;
   @include flex(row, space-around);
   align-items: center;
 
@@ -12,13 +12,19 @@
   }
 
   &__searchbar {
-    height: 2rem;
-    border-radius: 1rem;
+    height: 4rem;
+    border: 0.5px solid $inactive-button-color;
+    border-radius: 2rem;
+    width: 25rem;
+    background: url(../../assets/icons/search.svg) left no-repeat;
+    background-position-x: 1rem;
+    padding-left: 3.5rem;
   }
 
   &__login-dropdown {
     @include flex(row, space-around);
     font-size: 1.2rem;
     border: 1px black dashed;
+    align-items: center;
   }
 }

@@ -1,0 +1,77 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.panel {
+  background-color: $primary-background-color;
+  @include flex();
+
+  &__main-img {
+    width: 100%;
+  }
+}
+
+.panel--left {
+  @include flex(column, center);
+  width: 50%;
+  height: 100vh;
+}
+
+.panel--right {
+  @include flex(column, center);
+  width: 50%;
+  height: 100vh;
+}
+
+.loginform {
+  width: 100%;
+  @include flex(column, center);
+  text-align: left;
+  padding: 0 10rem;
+
+  &__img {
+    width: 60%;
+    align-self: center;
+  }
+
+  &__section {
+    @include flex(column, center);
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__remember {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  &__forgot {
+    text-align: right;
+    color: $active-button-color;
+  }
+
+  &__button {
+    width: 100%;
+    background-color: $active-button-color;
+    height: 3rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    color: $secondary-color;
+  }
+
+  &__signup {
+    align-self: center;
+    width: 80%;
+    @include flex();
+  }
+
+  &__signup span {
+    color: $active-button-color;
+    font-weight: 700;
+  }
+}
