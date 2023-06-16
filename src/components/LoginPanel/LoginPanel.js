@@ -2,7 +2,7 @@ import "./LoginPanel.scss";
 import running_person from "../../assets/Images/running-person.svg";
 import logo from "../../assets/Images/logo.svg";
 
-const LoginPanel = () => {
+const LoginPanel = ({ setLoggedIn }) => {
   return (
     <main className="panel">
       <section className="panel--left">
@@ -40,7 +40,14 @@ const LoginPanel = () => {
             <label htmlFor="">Remember Me</label>
           </div>
 
-          <button className="loginform__button">Log In</button>
+          <button
+            className="loginform__button"
+            onClick={() => {
+              setLoggedIn(true);
+            }}
+          >
+            Log In
+          </button>
           <p className="loginform__signup">
             Don't have an account?
             <span>Sign Up</span>

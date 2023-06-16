@@ -33,24 +33,28 @@ function App() {
 
   const getAndSetSchoolByID = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/schools/${admin.school_id}`);
+      const response = await axios.get(
+        `http://localhost:8080/schools/${admin.school_id}`
+      );
       setSchool(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const getAndSetAthletesData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/athletes/${school.id}`);
+      const response = await axios.get(
+        `http://localhost:8080/athletes/${school.id}`
+      );
       // const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/athletes/${school.id}`);
       setAthletes(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     if (loggedIn) {
@@ -63,12 +67,12 @@ function App() {
 
   return (
     <div className="App">
-      <p>TESTING: LOGGED IN: {String(loggedIn)}</p>
-      <p>TESTING: ADMINS SCHOOL ID: {String(admin.school_id)}</p>
-      <p>TESTING: SCHOOL NAME: {String(school.name)}</p>
-      <LoginPanel />
-      <header className="App-header">london marathon hackathon</header>
-      <MainPage loggedIn={loggedIn} admin={admin} school={school} athletes={athletes} />
+      <LoginPanel setLoggedIn={setLoggedIn} />
+
+      <header className="App-header" setLoggedIn={setLoggedIn}>
+        london marathon hackathon
+      </header>
+      <MainPage />
     </div>
   );
 }
