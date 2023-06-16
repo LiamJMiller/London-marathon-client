@@ -12,8 +12,9 @@
   }
 
   &__searchbar {
-    height: 3rem;
-    border-radius: 1.5rem;
+    height: 4rem;
+    border: 0.5px solid $inactive-button-color;
+    border-radius: 2rem;
     width: 25rem;
     background: url(../../assets/icons/search.svg) left no-repeat;
     background-position-x: 1rem;
