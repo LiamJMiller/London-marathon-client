@@ -1,0 +1,19 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.table-header {
+  width: 120%;
+  @include flex(row, space-evenly);
+  border-bottom: solid 1px grey;
+  border-top-left-radius: 2rem;
+
+  &__item {
+    width: 15%;
+    padding: 1rem;
+  }
+
+  &__checkbox {
+    width: 2rem;
+    margin-left: 1rem;
+  }
+}
