@@ -1,13 +1,20 @@
 //primary colors
-$primary-text-color: #ffffff;
-$primary-background-color: #0f0e0e;
+$primary-text-color: #222222;
+$primary-background-color: #f5f5f5;
 
 //secondary colors
-$secondary-text-color: rgb(207, 207, 207);
-$secondary-background-color: rgb(236, 236, 236);
+// $secondary-text-color: rgb(207, 207, 207);
+$secondary-color: #ffffff;
 
-$border-color: #ff92ad;
-// $active-color: #dbb000;
+$dash-unique: #1b0031;
+$active-button-color: #e41165;
+$inactive-button-color: #909090;
+
+//attendence colors
+$attending: #b7dbfd; // attending
+$attending-nc: #fdf0b7; //not confirmed
+$attending-na: #fdb7b7; // not attending
+$attending-wl: #e9e9e9; // waitlisted
 
 //breakpoints
 $tablet-breakpoint: 768px;
