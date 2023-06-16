@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+@mixin media-tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex($direction: row, $justify: space-between) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+@mixin user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+@mixin button {
+  background-color: none;
+  color: none;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: none;
+
+  &:hover {
+    background-color: none;
+  }
+}
+
+@mixin input {
+  margin-bottom: 1rem;
+  background-color: none;
+  border: 2px black solid;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
