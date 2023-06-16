@@ -11,7 +11,7 @@ export default function Header({ loggedIn, admin, school }) {
         placeholder="search by name"
       />
       <div className="header__login-dropdown">
-        <img src={usericon} alt="" />
+        <img className="header__user-icon" src={usericon} alt="" />
         <p>Users name here \/</p>
       </div>
     </header>

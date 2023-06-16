@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [admin, setAdmin] = useState({ school_id: 1}); // object with id, name, ...
   const [school, setSchool] = useState({ id: 1 }); // object with id, name, ...
   const [athletes, setAthletes] = useState([]);

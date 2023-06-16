@@ -2,15 +2,17 @@ import "./TableHeader.scss";
 import trashIconSource from "../../assets/icons/trash.svg";
 
 const TableHeader = ({ category, athletes }) => {
-  let title = "";
+  let title;
+  let count;
 
   if (category === "registered") {
     title = "Registered Athletes";
+    count = athletes.filter(athlete => athlete.attendance_status !== "Waitlist").length;
   }
   else {
     title = "Waitlist Athletes";
+    count = athletes.filter(athlete => athlete.attendance_status === "Waitlist").length;
   }
-  const count = athletes.length;
 
   return (
     <div className="table-header">
