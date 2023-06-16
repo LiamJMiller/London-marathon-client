@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [admin, setAdmin] = useState({ school_id: 1}); // object with id, name, ...
+  const [admin, setAdmin] = useState({ school_id: 1 }); // object with id, name, ...
   const [school, setSchool] = useState({ id: 1 }); // object with id, name, ...
   const [athletes, setAthletes] = useState([]);
 
@@ -34,24 +34,28 @@ function App() {
 
   const getAndSetSchoolByID = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/schools/${admin.school_id}`);
+      const response = await axios.get(
+        `http://localhost:8080/schools/${admin.school_id}`
+      );
       setSchool(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const getAndSetAthletesData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/athletes/${school.id}`);
+      const response = await axios.get(
+        `http://localhost:8080/athletes/${school.id}`
+      );
       // const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/athletes/${school.id}`);
       setAthletes(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     if (loggedIn) {
@@ -70,7 +74,6 @@ function App() {
       <MainPage />
     </div>
   );
-}
 }
 
 export default App;
